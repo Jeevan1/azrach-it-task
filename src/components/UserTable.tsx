@@ -12,13 +12,7 @@ import React from "react";
 import type { User } from "../types";
 import { useNavigate } from "react-router";
 
-const UserTable = ({
-  data,
-  loading,
-}: {
-  data: User[] | null;
-  loading?: boolean;
-}) => {
+const UserTable = ({ data }: { data: User[] | null; loading?: boolean }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const navigate = useNavigate();
@@ -47,6 +41,7 @@ const UserTable = ({
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
+    if (!event) return;
     setPage(newPage);
   };
 

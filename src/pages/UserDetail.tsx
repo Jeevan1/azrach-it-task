@@ -11,7 +11,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 const UserDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const { data, loading, error } = useFetch<User>(id ? `/users/${id}` : "");
+  const { data, loading } = useFetch<User>(id ? `/users/${id}` : "");
 
   return (
     <div className="min-h-screen bg-gray-100">

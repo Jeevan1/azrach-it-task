@@ -3,13 +3,7 @@ import type { User } from "../types";
 import UserCard from "./UserCard";
 import { useState } from "react";
 
-const UserList = ({
-  data,
-  loading,
-}: {
-  data: User[] | null;
-  loading?: boolean;
-}) => {
+const UserList = ({ data }: { data: User[] | null; loading?: boolean }) => {
   const [page, setPage] = useState(1);
   const rowsPerPage = 6;
 
